@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "microservice-config": {
+      "url": "github.com:vicjicaman/microservice-config.git",
+      "version": "1.70.1-master"
+    },
+    "microservice-auth-config": {
+      "url": "github.com:vicjicaman/microservice-auth-config.git",
+      "version": "1.70.3-master"
+    },
+    "microservice-account-config": {
+      "url": "github.com:vicjicaman/microservice-account-config.git",
+      "version": "1.70.1-master"
+    },
+    "microservice-home-config": {
+      "url": "github.com:vicjicaman/microservice-home-config.git",
+      "version": "file:./../microservice-home-config"
+    }
+  }
+}
