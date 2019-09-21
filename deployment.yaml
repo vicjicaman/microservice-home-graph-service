@@ -23,26 +23,26 @@ spec:
           image: 'repoflow/microservice-home-graph-container:1.70.1-master'
           env:
             -
-              name: ROUTE_GRAPH
+              name: HOME_ROUTE_GRAPH
               value: '${ROUTE_GRAPH@microservice-home-config}'
             -
-              name: ROUTE_EVENTS
+              name: HOME_ROUTE_EVENTS
               value: '${ROUTE_EVENTS@microservice-home-config}'
             -
-              name: INTERNAL_PORT_GRAPH
+              name: HOME_INTERNAL_PORT_GRAPH
               value: '${INTERNAL_PORT_GRAPH@microservice-home-config}'
             -
-              name: INTERNAL_URL_ACCOUNT_GRAPH
-              value: '${INTERNAL_URL_GRAPH@microservice-account-config}'
+              name: AUTH_CACHE_INTERNAL_HOST
+              value: '${INTERNAL_HOST_CACHE@microservice-auth-cache-config}'
             -
-              name: INTERNAL_HOST_CACHE
-              value: '${INTERNAL_HOST_CACHE@microservice-auth-config}'
+              name: AUTH_CACHE_INTERNAL_PORT
+              value: '${INTERNAL_PORT_CACHE@microservice-auth-cache-config}'
             -
-              name: INTERNAL_PORT_CACHE
-              value: '${INTERNAL_PORT_CACHE@microservice-auth-config}'
-            -
-              name: SECRET_PASSWORD_CACHE
+              name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE
+            -
+              name: AUTH_ACCOUNT_INTERNAL_URL_GRAPH
+              value: '${INTERNAL_URL_GRAPH@microservice-account-config}'
           ports:
             -
               containerPort: '${INTERNAL_PORT_GRAPH@microservice-home-config}'
