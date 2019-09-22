@@ -6,7 +6,7 @@ metadata:
   labels:
     app: home-graph-deployment
     moduleid: microservice-home-graph-service
-    version: 1.70.1-master
+    version: 1.70.2-master
 spec:
   replicas: 2
   selector:
@@ -23,26 +23,26 @@ spec:
           image: 'repoflow/microservice-home-graph-container:1.70.1-master'
           env:
             -
-              name: ROUTE_GRAPH
+              name: HOME_ROUTE_GRAPH
               value: /backend/graphql
             -
-              name: ROUTE_EVENTS
+              name: HOME_ROUTE_EVENTS
               value: /backend/events
             -
-              name: INTERNAL_PORT_GRAPH
+              name: HOME_INTERNAL_PORT_GRAPH
               value: '4000'
             -
-              name: INTERNAL_URL_ACCOUNT_GRAPH
-              value: 'http://account-graph-service.microservices-namespace:4000/graphql'
-            -
-              name: INTERNAL_HOST_CACHE
+              name: AUTH_CACHE_INTERNAL_HOST
               value: auth-cache-service.microservices-namespace
             -
-              name: INTERNAL_PORT_CACHE
+              name: AUTH_CACHE_INTERNAL_PORT
               value: '6379'
             -
-              name: SECRET_PASSWORD_CACHE
+              name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE
+            -
+              name: AUTH_ACCOUNT_INTERNAL_URL_GRAPH
+              value: 'http://account-graph-service.microservices-namespace:4000/graphql'
           ports:
             -
               containerPort: 4000
